@@ -1,9 +1,9 @@
 // global variables
 let questionEl = document.getElementById("questions");
-let answerEl = document.getElementById("answers")
+let answerEl = document.getElementById("answers");
 let timerEl = document.getElementById("timer");
-let scoreEl = document.getElementById("results");
-let countDown = 90;
+let scoreEl = document.getElementById("quizScore");
+let countDown = 60;
 
 
 let questionNumber = -1;
@@ -67,8 +67,8 @@ let startTimer = function() {
 
         if(countDown === 0 || questionNumber === questions.length) {
             clearInterval(timer);
-            setTimeout(displayScore, 500);
-            document.getElementById("quiz").innerHTML = "<h3>Time is up!</h3>"
+            setTimeout(showScore, 500);
+            // document.getElementById("quiz").innerHTML = "<h3>Time is up!</h3>"
         }
     }, 1000);
 };
@@ -105,10 +105,23 @@ let showScore = function() {
     scoreEl.textContent = "Final Score: " + countDown;
 }
 
+let quizScore = function() {
+    userName = document.getElementById("name").value;
 
+    let newScore = {
+        name: userName,
+        score: countDown
+    };
+    localStorage.setItem("Name", newScore.name);
+    localStorage.setItem("Score", newScore.score);
+    // let highScores = JSON.parse(localStorage.getItem(highScores) || "[]");
+    // highScores.push(newScore);
+    // localStorage.setItem("highScores", JSON.stringify(highScores));
+};
 
 // button to start counter and quiz
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
+document.querySelector("#submitBtn").addEventListener("click", quizScore);
 // answer choice buttons
 answerEl.addEventListener("click", function(event) {
     let feedbackEl = document.getElementsByClassName("feedback")[0]
