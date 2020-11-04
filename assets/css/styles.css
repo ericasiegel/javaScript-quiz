@@ -1,16 +1,23 @@
-.hidden {
-    display: none;
-}
 .header {
-    color: purple;
+    color: rgb(0, 13, 128);
     display: flex;
     justify-content: space-between;
     margin: 40px;
+}
+header div {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
 }
 .container {
     width: 500px;
     margin: auto;
     text-align: center;
+}
+h1 {
+    color: rgb(0, 13, 128);
 }
 div ul li {
     list-style: none;
@@ -18,8 +25,8 @@ div ul li {
 }
 
 button {
-    color: rgb(90, 1, 173);
-    background-color: rgb(252, 242, 255);
+    color: rgb(1, 18, 173);
+    background-color: rgb(242, 242, 255);
     font-weight: bold;
     font-size: large;
     width: 100%;
