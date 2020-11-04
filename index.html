@@ -10,27 +10,40 @@
     <body>
         <!-- header -->
         <header class="header">
-            <div class="highscore" id="highscore">View high scores</div>
-            <div class="counter" id="timer">Time: 0</div>
+            <div class="highscore" id="highscore">View High Scores</div>
+            <div class="counter" id="timer">Time: 90</div>
         </header>
         <!-- Into do quiz -->
-        <div class="intro" id="intro">
+        <div class="intro container" id="intro">
             <h1>JavaScript Quiz</h1>
             <p>Get ready to test your JavaScript knowledge with this quiz! You have 60 seconds to answer 6 questions. Every question you get wrong will deduct 10 seconds from your time and your score. Good Luck!</p>
             <button id="start-btn" class="btn">Start Quiz</button>
         </div>
         
         <!-- quiz -->
-        <div class="start-quiz hidden" id="quiz">
-            Questions
+        <div class="start-quiz container hidden" id="quiz">
+            <h3 id="questions">Questions</h3>
+            <ul id="answers">
+                <li class="answerChoice">A. </li>
+                <li class="answerChoice">B. </li>
+                <li class="answerChoice">C. </li>
+                <li class="answerChoice">D. </li>
+            </ul>
+            <p class="feedback"></p>
         </div>
 
         <!-- results -->
-        <div class="results hidden" id="results">
-            Results
+        <div class="results container hidden" id="results">
+            <h2>Your Results!</h2>
+            <p id="quizScore"></p>
+            <form class="score-form" di="upload-score">
+                <label for="score">Your Name</label>
+                <input type="text" id="name">
+                <button type="button" class="submitBtn">Submit Your Score</button>
+            </form>
         </div>
 
 
-        <script src="/assets/js/script.js"></script>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>

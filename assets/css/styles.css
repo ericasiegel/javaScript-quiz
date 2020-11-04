@@ -1,3 +1,18 @@
 .hidden {
     display: none;
 }
+.header {
+    color: purple;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+.container {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+div ul li {
+    list-style: none;
+    text-align: left;
+}

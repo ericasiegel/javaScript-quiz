@@ -1,9 +1,15 @@
 // global variables
-let counter = 60;
-let quizEl = document.querySelector("#quiz");
-let answerEl = document.querySelector("#answers");
-let timerEl = document.querySelector("#timer");
+let questionEl = document.getElementById("questions");
+let answerEl = document.getElementById("answers")
+let timerEl = document.getElementById("timer");
+let scoreEl = document.getElementById("results");
+let countDown = 90;
 
+
+let questionNumber = -1;
+let answer;
+
+let userName;
 
 // quiz questions
 let questions = [
@@ -33,25 +39,90 @@ let questions = [
         a: "true and false"
     },
     {
-        q: "A very useful tool used during development and debuggin for printing content to the debugger is:",
+        q: "A very useful tool used during development and debugging for printing content to the debugger is:",
         c: ["JavaScript", "Terminal", "console.log", "data terminal"],
         a: "console.log"
     },
 
 ]
 
-// create countdown for start of quiz button
+// start the timer and quiz
+let startQuiz = function() {
+    // hide intro and show quiz element
+    document.getElementById("intro").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
 
-// create for loop for randomization of quiz questions and answers
+    // start timer
+    startTimer();
 
-    //add buttons to C: elements
-    // if wrong answer is selected display it under next question and subtract 10 seconds
-    //when the answers are clicked they move on to another question
+    // display questions
+    quizQuestions();
+}
 
-// submit button enters results into result page where we can add our name and log it into the database
+  // countdown for the quiz
+let startTimer = function() {
+    let timer = setInterval(function function1() {
+        countDown --;  
+        timerEl.textContent = "Time: " + countDown + " seconds remaining";
 
-// add a call to the database to show high scores
+        if(countDown === 0 || questionNumber === questions.length) {
+            clearInterval(timer);
+            setTimeout(displayScore, 500);
+            document.getElementById("quiz").innerHTML = "<h3>Time is up!</h3>"
+        }
+    }, 1000);
+};
+// set quiz questions
+let quizQuestions = function() {
+    questionNumber++;
+    answer = questions[questionNumber].a
+
+    questionEl.textContent = questions[questionNumber].q;
+    answerEl.innerHTML = "";
+
+    let c = questions[questionNumber].c;
+    
+    for (var i = 0; i < c.length; i++) {
+        var nextAnswer = document.createElement("button");
+
+        nextAnswer.textContent = c[i];
+        answerBtn = answerEl.appendChild(nextAnswer);
+    }
+};
+let hideFeedback = function() {
+    let feedbackEl = document.getElementsByClassName("feedback")[0]
+    feedbackEl.style.display='none'
+}
+let showFeedback = function() {
+    let feedbackEl = document.getElementsByClassName("feedback") [0]
+    feedbackEl.removeAttribute("style");
+};
+
+//show score
+let showScore = function() {
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("results").classList.remove("hidden");
+    scoreEl.textContent = "Final Score: " + countDown;
+}
 
 
-// eventListener buttons refrencing each button to return to a different div
 
+// button to start counter and quiz
+document.querySelector("#start-btn").addEventListener("click", startQuiz);
+// answer choice buttons
+answerEl.addEventListener("click", function(event) {
+    let feedbackEl = document.getElementsByClassName("feedback")[0]
+
+    if (answer === event.target.textContent) {
+        feedbackEl.textContent = "Correct Answer!"
+        setTimeout(hideFeedback, 1225);
+        showFeedback();
+    } else {
+        feedbackEl.textContent = "Wrong Answer!";
+        setTimeout(hideFeedback, 1225);
+        countDown = countDown - 10;
+        showFeedback();
+    }
+    quizQuestions();
+
+});
