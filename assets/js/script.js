@@ -114,9 +114,7 @@ let quizScore = function() {
     };
     localStorage.setItem("Name", newScore.name);
     localStorage.setItem("Score", newScore.score);
-    // let highScores = JSON.parse(localStorage.getItem(highScores) || "[]");
-    // highScores.push(newScore);
-    // localStorage.setItem("highScores", JSON.stringify(highScores));
+
 };
 
 // button to start counter and quiz
