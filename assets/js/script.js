@@ -4,6 +4,7 @@ let answerEl = document.getElementById("answers");
 let timerEl = document.getElementById("timer");
 let scoreEl = document.getElementById("quizScore");
 let countDown = 60;
+let scoreIdCounter = 0;
 
 
 let questionNumber = -1;
@@ -61,13 +62,13 @@ let startQuiz = function() {
 
   // countdown for the quiz
 let startTimer = function() {
-    let timer = setInterval(function function1() {
+    let timer = setInterval(function() {
         countDown --;  
         timerEl.textContent = "Time: " + countDown + " seconds remaining";
 
         if(countDown === 0 || questionNumber === questions.length) {
             clearInterval(timer);
-            setTimeout(showScore, 500);
+            setTimeout(showScore, 100);
             // document.getElementById("quiz").innerHTML = "<h3>Time is up!</h3>"
         }
     }, 1000);
@@ -79,6 +80,7 @@ let quizQuestions = function() {
 
     questionEl.textContent = questions[questionNumber].q;
     answerEl.innerHTML = "";
+    // questionEl.setAttribute("style", "color: rgb(33, 33, 88);font-weight: light;font-size: 20px;");
 
     let c = questions[questionNumber].c;
     
@@ -88,6 +90,7 @@ let quizQuestions = function() {
         nextAnswer.textContent = c[i];
         answerBtn = answerEl.appendChild(nextAnswer);
     }
+    
 };
 let hideFeedback = function() {
     let feedbackEl = document.getElementsByClassName("feedback")[0]
@@ -110,10 +113,11 @@ let quizScore = function() {
 
     let newScore = {
         name: userName,
-        score: countDown
+        score: countDown,
     };
     localStorage.setItem("Name", newScore.name);
     localStorage.setItem("Score", newScore.score);
+
 
 };
 
@@ -126,11 +130,11 @@ answerEl.addEventListener("click", function(event) {
 
     if (answer === event.target.textContent) {
         feedbackEl.textContent = "Correct Answer!"
-        setTimeout(hideFeedback, 1225);
+        setTimeout(hideFeedback, 2000);
         showFeedback();
     } else {
         feedbackEl.textContent = "Wrong Answer!";
-        setTimeout(hideFeedback, 1225);
+        setTimeout(hideFeedback, 2000);
         countDown = countDown - 10;
         showFeedback();
     }

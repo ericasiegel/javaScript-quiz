@@ -1,8 +1,11 @@
+
+
 .header {
     color: rgb(0, 13, 128);
     display: flex;
     justify-content: space-between;
     margin: 40px;
+    border-bottom: 3px;
 }
 header div {
     font-weight: bold;
@@ -19,6 +22,11 @@ header div {
 h1 {
     color: rgb(0, 13, 128);
 }
+
+h2 {
+    color: rgb(0, 13, 128); 
+}
+
 div ul li {
     list-style: none;
     text-align: left;
@@ -32,4 +40,22 @@ button {
     width: 100%;
     height: 40px;
     margin: 10px;
+}
+
+div p {
+    color: rgb(33, 33, 88);
+    font-weight: light;
+    font-size: 20px;
+}
+
+h3 {
+    color: rgb(33, 33, 88);
+    font-weight: light;
+    font-size: 20px;
+}
+
+.feedback {
+    color: rgb(107, 107, 206);
+    font-size: 20px;
+    font-weight: light;
 }
