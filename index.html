@@ -10,7 +10,9 @@
     <body>
         <!-- header -->
         <header class="header">
-            <div class="highscore" id="highscore">View High Scores</div>
+            <div class="highscore" id="highscore">
+                <button id="view-high-score">View High Scores</button>
+            </div>
             <div class="counter" id="timer">Time: 60 Seconds</div>
         </header>
         <!-- Into do quiz -->
@@ -22,8 +24,8 @@
         
         <!-- quiz -->
         <div class="start-quiz container hidden" id="quiz">
-            <h3 id="questions">Questions</h3>
-            <ul id="answers"></ul>
+            <h3 id="questions" class="qStyle">Questions</h3>
+            <p id="answers"></p>
             <p class="feedback"></p>
         </div>
 
@@ -31,7 +33,7 @@
         <div class="results container hidden" id="results">
             <h2>Your Results!</h2>
             <p id="quizScore"></p>
-            <form class="score-form" di="upload-score">
+            <form class="score-form" id="upload-score">
                 <label for="score">Your Name</label>
                 <input type="text" id="name">
                 <button type="button" id="submitBtn">Submit Your Score</button>
@@ -39,7 +41,10 @@
         </div>
 
         <!-- High Scores -->
-        
+        <div class="topScore container hidden" id="topScore">
+            <h2>Top Scores!</h2>
+            <p id="highScore"></p>
+        </div>
 
 
         <script src="./assets/js/script.js"></script>
