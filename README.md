@@ -19,14 +19,14 @@ The user can view high scores in the Top Scores tab.
 If the user would like to try for a harder score, they can take the quiz again.
 
 ### Begining of Quiz
-![Start Page](./assets/image1.png)
+![Start Page](./assets/images/image1.png)
 
 ### Quiz
 
-![Quiz](./assets/image2.png)
+![Quiz](./assets/images/image2.png)
 
 ### Final Score
-![Final Score](./assets/image3.png)
+![Final Score](./assets/images/image3.png)
 
 
 
