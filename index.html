@@ -11,7 +11,7 @@
         <!-- header -->
         <header class="header">
             <div class="highscore" id="highscore">
-                <button id="view-high-score">View High Scores</button>
+                <a href="./topscore.html">View High Scores</a>
             </div>
             <div class="counter" id="timer">Time: 60 Seconds</div>
         </header>
@@ -19,7 +19,7 @@
         <div class="intro container" id="intro">
             <h1>JavaScript Quiz</h1>
             <p>Get ready to test your JavaScript knowledge with this quiz! You have 60 seconds to answer 6 questions. Every question you get wrong will deduct 10 seconds from your time and your score. Good Luck!</p>
-            <button id="start-btn" class="btn">Start Quiz</button>
+            <button type="button" id="start-btn" class="btn">Start Quiz</button>
         </div>
         
         <!-- quiz -->
@@ -40,11 +40,7 @@
             </form>
         </div>
 
-        <!-- High Scores -->
-        <div class="topScore container hidden" id="topScore">
-            <h2>Top Scores!</h2>
-            <p id="highScore"></p>
-        </div>
+       
 
 
         <script src="./assets/js/script.js"></script>

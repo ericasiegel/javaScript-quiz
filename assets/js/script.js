@@ -3,8 +3,8 @@ let questionEl = document.getElementById("questions");
 let answerEl = document.getElementById("answers");
 let timerEl = document.getElementById("timer");
 let scoreEl = document.getElementById("quizScore");
+let topScore = document.getElementById("topScores")
 let countDown = 60;
-let scoreIdCounter = 0;
 
 
 let questionNumber = -1;
@@ -115,15 +115,20 @@ let quizScore = function() {
         name: userName,
         score: countDown,
     };
-    localStorage.setItem("Name", newScore.name);
-    localStorage.setItem("Score", newScore.score);
 
-
+    let topScores = JSON.parse(localStorage.getItem("topScores") || "[]");
+    topScores.push(newScore)
+    localStorage.setItem("topScores", JSON.stringify(topScores));
 };
+
+
 
 // button to start counter and quiz
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
-document.querySelector("#submitBtn").addEventListener("click", quizScore);
+document.querySelector("#submitBtn").addEventListener("click", function (event) {
+    event.stopPropagation();
+    quizScore();
+});
 // answer choice buttons
 answerEl.addEventListener("click", function(event) {
     let feedbackEl = document.getElementsByClassName("feedback")[0]
@@ -141,3 +146,4 @@ answerEl.addEventListener("click", function(event) {
     quizQuestions();
 
 });
+
