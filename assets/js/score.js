@@ -1,9 +1,8 @@
 let restartBtn = document.querySelector("button.restartBtn"),
-    // get the highScores list and turn it back into an object
     topScores = JSON.parse(localStorage.getItem("topScores") || "[]"),
     scoreList = document.getElementById("userScores");
 
-// sort scores from high to low
+// sort scores
 topScores.sort(function (a, b) {
     return b.score - a.score
 })
@@ -16,7 +15,7 @@ for (var s = 0; s < topScores.length; s++) {
 }
 
 
-// click handlers for restart and clearing scoreboard
+// back to main page
 
 restartBtn.addEventListener("click", function () {
     history.back();
