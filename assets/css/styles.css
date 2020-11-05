@@ -64,3 +64,10 @@ h3 {
     font-size: 20px;
     font-weight: light;
 }
+
+div ol {
+    color: rgb(21, 19, 170);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}

@@ -128,6 +128,8 @@ document.querySelector("#start-btn").addEventListener("click", startQuiz);
 document.querySelector("#submitBtn").addEventListener("click", function (event) {
     event.stopPropagation();
     quizScore();
+
+    window.location.href = "./topscore.html";
 });
 // answer choice buttons
 answerEl.addEventListener("click", function(event) {

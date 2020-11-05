@@ -22,11 +22,13 @@ If the user would like to try for a harder score, they can take the quiz again.
 ![Start Page](./assets/images/image1.png)
 
 ### Quiz
-
 ![Quiz](./assets/images/image2.png)
 
 ### Final Score
 ![Final Score](./assets/images/image3.png)
+
+### High Scores
+![High Scores](./assets/images/image4.png)
 
 
 
