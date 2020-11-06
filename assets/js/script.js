@@ -7,7 +7,7 @@ let topScore = document.getElementById("topScores")
 let countDown = 60;
 
 
-let questionNumber = "";
+let questionNumber = -1;
 let answer;
 
 let userName;
@@ -76,21 +76,28 @@ let startTimer = function() {
 // set quiz questions
 let quizQuestions = function() {
     questionNumber++;
-    answer = questions[questionNumber].a
 
-    questionEl.textContent = questions[questionNumber].q;
-    answerEl.innerHTML = "";
-    // questionEl.setAttribute("style", "color: rgb(33, 33, 88);font-weight: light;font-size: 20px;");
+    if (questions[questionNumber] !== undefined) {
+        answer = questions[questionNumber].a;
 
-    let c = questions[questionNumber].c;
-    
-    for (var i = 0; i < c.length; i++) {
-        var nextAnswer = document.createElement("button");
+        questionEl.textContent = questions[questionNumber].q;
+        answerEl.innerHTML = "";
+        // questionEl.setAttribute("style", "color: rgb(33, 33, 88);font-weight: light;font-size: 20px;");
 
-        nextAnswer.textContent = c[i];
-        answerBtn = answerEl.appendChild(nextAnswer);
+        let c = questions[questionNumber].c;
+        
+        for (var i = 0; i < c.length; i++) {
+            
+                var nextAnswer = document.createElement("button");
+
+                nextAnswer.textContent = c[i];
+                answerBtn = answerEl.appendChild(nextAnswer);
+            
+            }
+        }
+    else {
+        return;
     }
-    
 };
 let hideFeedback = function() {
     let feedbackEl = document.getElementsByClassName("feedback")[0]
@@ -148,4 +155,3 @@ answerEl.addEventListener("click", function(event) {
     quizQuestions();
 
 });
-

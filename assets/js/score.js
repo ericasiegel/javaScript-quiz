@@ -21,4 +21,4 @@ topUserScores();
 
 document.getElementById("restartBtn").addEventListener ("click", function() {
     window.location.href = "./index.html"
-})
+});
