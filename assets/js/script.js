@@ -104,7 +104,7 @@ let hideFeedback = function() {
     feedbackEl.style.display='none'
 }
 let showFeedback = function() {
-    let feedbackEl = document.getElementsByClassName("feedback") [0]
+    let feedbackEl = document.getElementsByClassName("feedback")[0]
     feedbackEl.removeAttribute("style");
 };
 
