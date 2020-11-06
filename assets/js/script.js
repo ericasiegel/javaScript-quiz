@@ -7,7 +7,7 @@ let topScore = document.getElementById("topScores")
 let countDown = 60;
 
 
-let questionNumber = -1;
+let questionNumber = "";
 let answer;
 
 let userName;

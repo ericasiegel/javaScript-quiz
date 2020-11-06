@@ -1,4 +1,4 @@
-let restartBtn = document.querySelector("button.restartBtn"),
+let topUserScores = function () {
     topScores = JSON.parse(localStorage.getItem("topScores") || "[]"),
     usersScores = document.getElementById("userScores");
 
@@ -13,8 +13,12 @@ for (var s = 0; s < topScores.length; s++) {
     newLi.textContent = topScores[s].name + " - " + topScores[s].score
     usersScores.appendChild(newLi)
 }
+
+};
+
+topUserScores();
 // back to main page
 
-restartBtn.addEventListener("click", function () {
-    history.back();
-});
+document.getElementById("restartBtn").addEventListener ("click", function() {
+    window.location.href = "./index.html"
+})
