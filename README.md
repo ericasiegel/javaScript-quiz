@@ -18,6 +18,8 @@ The user can view high scores in the Top Scores tab.
 
 If the user would like to try for a harder score, they can take the quiz again.
 
+### [Click Here](https://ericasiegel.github.io/javaScript-quiz/) to see the app.
+
 ### Begining of Quiz
 ![Start Page](./assets/images/image1.png)
 
